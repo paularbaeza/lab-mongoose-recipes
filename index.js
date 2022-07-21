@@ -32,6 +32,28 @@ mongoose
     //console.log(response.title)
     return Recipe.insertMany(data)
   })
+  .then((response)=>{
+    
+    return Recipe.findOneAndUpdate({title: "Rigatoni alla Genovese"}, {duration: 100}, {new: true})
+  })
+  .then((response)=>{
+    
+    console.log(response.duration)
+    return Recipe.deleteOne({title: "Carrot Cake"})
+
+  })
+  .then((response)=>{
+    
+    console.log("Carrot Cake removed!")
+    mongoose.disconnect(MONGODB_URI)
+
+  })
+  .then((response)=>{
+    
+    console.log("Semos unas maquinas !!")
+
+  })
   .catch(error => {
     console.error('Error connecting to the database', error);
   });
+

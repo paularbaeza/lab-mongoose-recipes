@@ -5,11 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js",
-    "dev": "node ./index.js"
+    "dev": "node ./index.js",
+    "server": "nodemon index.js"
   },
   "license": "MIT",
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.19"
   },
   "dependencies": {
     "mongoose": "^6.4.6"
